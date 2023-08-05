@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+   <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae eum facilis mollitia libero amet, eos cupiditate in facere quae expedita asperiores harum voluptatum deleniti. Iste, dolorem adipisci iusto nobis corrupti voluptas doloremque totam modi! Fugiat, possimus rerum.
+     Repudiandae cum quasi saepe expedita nam. Nesciunt dolorum deleniti voluptatem inventore voluptatum, aspernatur iure blanditiis mollitia distinctio, perspiciatis, doloribus consequatur ipsam voluptates quidem. Qui ad facere temporibus aspernatur accusamus mollitia.
+     Eligendi modi consequatur libero error nostrum cum laudantium animi dolorem possimus, exercitationem quos veritatis. Quaerat consequuntur, sequi officiis ex enim praesentium omnis deserunt sit necessitatibus ipsam dolor est sapiente laboriosam impedit blanditiis debitis.
+    </p>
+
+   <button data-open-modal>відкрити модалку</button>
+
+   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus quia explicabo voluptas reprehenderit quidem provident corporis numquam ut perspiciatis, sapiente repudiandae culpa distinctio eveniet voluptatibus quis! Earum delectus odio vitae error numquam ab harum similique
+     provident, eligendi aliquam deserunt. Ex excepturi vel ipsa suscipit assumenda quisquam incidunt porro minus odit amet. Reprehenderit veniam, nihil quibusdam ipsam obcaecati, totam odit error voluptate beatae sed numquam voluptatem doloremque consequatur nesciunt aliquid maxime ad 
+     similique magni, qui iure sequi. Perferendis corporis rerum officiis quaerat, natus harum repellat delectus eius dolorum voluptas? Neque veritatis nihil iusto dolores? Qui quisquam, dicta molestias doloribus asperiores praesentium.
+   </p>
+
+    <div class="backdrop is-hidden" data-backdrop>
+        <div class="modal">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo cumque cum reiciendis officia. Delectus, a?</p>
+            <button type="button" data-close-modal>закрити</button>
+        </div>
+    </div>
+
+    
+    <script>
+        const refs = {
+          openModalBtn: document.querySelector("[data-open-modal]"),
+          closeModalBtn: document.querySelector("[data-close-modal]"),
+          backdrop: document.querySelector("[data-backdrop]"),
+        };
+  
+        refs.openModalBtn.addEventListener("click", toggleModal);
+        refs.closeModalBtn.addEventListener("click", toggleModal);
+  
+        refs.backdrop.addEventListener("click", logBackdropClick);
+  
+        function toggleModal() {
+          refs.backdrop.classList.toggle("is-hidden");
+        }
+  
+        function logBackdropClick() {
+          console.log("Это клик в бекдроп");
+        }
+      </script>
+</body>
+</html>
